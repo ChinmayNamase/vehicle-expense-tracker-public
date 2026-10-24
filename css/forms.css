@@ -1,0 +1,63 @@
+/* =====================================================================
+   Form controls and dialogs
+   ===================================================================== */
+.field { display: grid; gap: 6px; min-width: 0; }
+.field label { font-size: 0.84rem; font-weight: 600; color: var(--text-2); }
+.field .req { color: var(--red); }
+.field-inline label { font-size: 0.75rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+.field-grow { flex: 1 1 220px; }
+
+input:not([type=checkbox]):not([type=radio]):not([type=file]), select, textarea {
+  width: 100%; padding: 9px 12px; font: inherit; font-size: 0.92rem; color: var(--text);
+  background: var(--surface); border: 1px solid #d5dce6; border-radius: var(--radius-sm);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+select { padding-right: 30px; }
+textarea { resize: vertical; min-height: 76px; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--blue); box-shadow: var(--focus); }
+input[readonly] { background: var(--surface-2); color: var(--text-2); }
+input[aria-invalid=true], select[aria-invalid=true], textarea[aria-invalid=true] { border-color: var(--red); }
+input[type=file] { font: inherit; font-size: 0.85rem; max-width: 100%; }
+input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--blue); margin: 0; }
+
+.hint { margin: 0; font-size: 0.76rem; color: var(--muted); }
+.field-error { margin: 0; font-size: 0.78rem; color: var(--red); min-height: 0; }
+.field-error:empty { display: none; }
+
+.field-check { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 10px; row-gap: 4px; padding-top: 22px; }
+.field-check label { font-weight: 600; color: var(--text); font-size: 0.88rem; cursor: pointer; }
+.field-check .hint, .field-check .field-error { grid-column: 2; }
+.inline-check { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; }
+
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; }
+.field-full, .form-section { grid-column: 1 / -1; }
+.form-section { margin-top: 6px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.form-section:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.form-message:empty { display: none; }
+.receipt-existing { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 6px; }
+
+/* Live calculation panel in the fuel form */
+.calc-panel { background: var(--green-soft); border: 1px solid #bbe5c8; border-radius: var(--radius-sm); padding: 14px 16px; }
+.calc-panel h3 { display: flex; align-items: center; gap: 8px; color: #14532d; margin-bottom: 10px; }
+.calc-grid { margin: 0 0 4px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px 16px; }
+.calc-grid dt { font-size: 0.75rem; color: #3f6b4f; }
+.calc-grid dd { margin: 0; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+.calc-panel .alert { margin: 10px 0 0; }
+
+/* ---------------------------------------------------------------------
+   Dialogs
+   --------------------------------------------------------------------- */
+.dialog {
+  border: 0; padding: 0; border-radius: 18px; box-shadow: var(--shadow-lg);
+  width: min(560px, calc(100vw - 24px)); max-height: calc(100vh - 32px); color: var(--text);
+}
+.dialog-sm { width: min(420px, calc(100vw - 24px)); }
+.dialog-lg { width: min(760px, calc(100vw - 24px)); }
+.dialog[open] { display: flex; flex-direction: column; animation: dialog-in 0.18s ease-out; }
+.dialog::backdrop { background: rgba(15, 23, 42, 0.5); backdrop-filter: blur(2px); }
+.dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 22px; border-bottom: 1px solid var(--border); }
+.dialog-header h2 { font-size: 1.1rem; }
+.dialog-body { padding: 20px 22px; overflow-y: auto; }
+.dialog-footer { display: flex; justify-content: flex-end; gap: 10px; padding: 14px 22px; border-top: 1px solid var(--border); background: var(--surface-2); border-radius: 0 0 18px 18px; }
+.confirm-message { margin: 0; color: var(--text-2); }
+@keyframes dialog-in { from { transform: translateY(10px) scale(0.98); opacity: 0; } }

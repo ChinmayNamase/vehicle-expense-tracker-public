@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vehicle Expense Tracker — fuel, mileage &amp; expenses for your bike and car</title>
+  <meta name="description" content="Track bike and car expenses, petrol litres, mileage (km/L), servicing and insurance in one place.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js" defer></script>
+  <script type="module">
+    import { initLandingNav } from './js/auth.js';
+    window.lucide?.createIcons();
+    initLandingNav();
+  </script>
+</head>
+<body class="landing-body">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="landing-header">
+    <div class="container landing-nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="" width="36" height="36">
+        <span>Vehicle Expense Tracker</span>
+      </a>
+      <button class="icon-btn landing-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="landing-links"
+        onclick="const open=document.body.classList.toggle('landing-nav-open');this.setAttribute('aria-expanded',open)">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+      <nav id="landing-links" class="landing-links" aria-label="Main">
+        <a href="#features">Features</a>
+        <a href="#preview">Preview</a>
+        <a href="#how">How it works</a>
+        <a href="login.html" class="btn btn-secondary" data-guest-only>Log in</a>
+        <a href="register.html" class="btn btn-primary" data-guest-only>Sign up free</a>
+        <a href="dashboard.html" class="btn btn-primary" data-user-only hidden>Open dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow"><i data-lucide="sparkles" aria-hidden="true"></i> From spreadsheet to smart dashboard</p>
+          <h1>Know exactly what your bike or car costs you.</h1>
+          <p class="lead">Log fuel fills, servicing, insurance and every other expense. Vehicle Expense Tracker calculates petrol litres, distance travelled, mileage (km/L) and cost per kilometre automatically — no formulas to maintain.</p>
+          <div class="hero-actions">
+            <a href="register.html" class="btn btn-primary btn-lg" data-guest-only>Get started — it's free</a>
+            <a href="login.html" class="btn btn-secondary btn-lg" data-guest-only>Log in</a>
+            <a href="dashboard.html" class="btn btn-primary btn-lg" data-user-only hidden>Go to my dashboard</a>
+          </div>
+          <ul class="hero-points">
+            <li><i data-lucide="shield-check" aria-hidden="true"></i> Private: your data is visible only to you</li>
+            <li><i data-lucide="indian-rupee" aria-hidden="true"></i> Built for ₹ and Indian number format</li>
+            <li><i data-lucide="upload" aria-hidden="true"></i> Import your Google Sheets CSV</li>
+          </ul>
+        </div>
+
+        <!-- Static illustration of the dashboard layout (example values, not real data) -->
+        <figure id="preview" class="preview" aria-label="Dashboard preview with example values">
+          <div class="preview-window">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-body">
+              <div class="preview-stats">
+                <div class="preview-stat"><small>Total expenses</small><strong>₹48,250.00</strong></div>
+                <div class="preview-stat green"><small>Petrol consumed</small><strong>212.40 L</strong></div>
+                <div class="preview-stat"><small>Distance</small><strong>9,842.6 km</strong></div>
+                <div class="preview-stat green"><small>Mileage</small><strong>46.34 km/L</strong></div>
+              </div>
+              <div class="preview-chart" aria-hidden="true">
+                <span style="height:45%"></span><span style="height:62%"></span><span style="height:38%"></span>
+                <span style="height:80%"></span><span style="height:55%"></span><span style="height:70%"></span>
+                <span style="height:48%"></span><span style="height:90%"></span><span style="height:66%"></span>
+              </div>
+              <div class="preview-rows">
+                <div><span>Petrol HPCL</span><span>6.33 L</span><b>₹658.00</b></div>
+                <div><span>General service</span><span>Servicing</span><b>₹1,250.00</b></div>
+                <div><span>Petrol IOCL</span><span>5.77 L</span><b>₹600.00</b></div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Example preview — your dashboard shows your own records.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Everything your spreadsheet did — and more</h2>
+        <div class="feature-grid">
+          <article class="feature"><i data-lucide="fuel" aria-hidden="true"></i><h3>Fuel tracker</h3><p>Enter amount and price per litre; litres are calculated instantly. Override with the pump receipt when you have it.</p></article>
+          <article class="feature"><i data-lucide="gauge" aria-hidden="true"></i><h3>Honest mileage</h3><p>km/L between full-tank fills, with clear "estimated" labels when the data can't support an exact figure.</p></article>
+          <article class="feature"><i data-lucide="route" aria-hidden="true"></i><h3>Distance from odometer</h3><p>Distance between fills from odometer readings, with warnings for readings that go backwards.</p></article>
+          <article class="feature"><i data-lucide="bar-chart-3" aria-hidden="true"></i><h3>Charts &amp; monthly reports</h3><p>Monthly spend, fuel consumption, running distance and category breakdowns, exportable to CSV.</p></article>
+          <article class="feature"><i data-lucide="wrench" aria-hidden="true"></i><h3>Service &amp; insurance</h3><p>Keep service history and policies, and see reminders for upcoming services and renewals.</p></article>
+          <article class="feature"><i data-lucide="car-front" aria-hidden="true"></i><h3>Multiple vehicles</h3><p>Bikes and cars side by side, each with its own details panel, odometer and cost per km.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">How it works</h2>
+        <ol class="steps">
+          <li><span>1</span><h3>Create an account</h3><p>Sign up with your email. Your records are protected with row-level security.</p></li>
+          <li><span>2</span><h3>Add your vehicle</h3><p>Registration number, odometer, fuel type — optional details only if you want them.</p></li>
+          <li><span>3</span><h3>Log fills &amp; expenses</h3><p>Or import your existing Google Sheets CSV in one go.</p></li>
+          <li><span>4</span><h3>Watch the insights</h3><p>Dashboard, mileage and reports update automatically.</p></li>
+        </ol>
+        <div class="center"><a href="register.html" class="btn btn-primary btn-lg" data-guest-only>Start tracking</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="landing-footer">
+    <div class="container footer-grid">
+      <div class="brand"><img src="assets/logo.svg" alt="" width="28" height="28"><span>Vehicle Expense Tracker</span></div>
+      <nav aria-label="Footer">
+        <a href="#features">Features</a>
+        <a href="login.html">Log in</a>
+        <a href="register.html">Sign up</a>
+      </nav>
+      <p class="muted small">Built with HTML, CSS, JavaScript, Supabase and Chart.js.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "vehicle-expense-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Track bike and car expenses, fuel consumption, mileage, maintenance and insurance with Supabase.",
+  "type": "module",
+  "scripts": {
+    "config": "node scripts/generate-config.mjs",
+    "start": "node scripts/generate-config.mjs && node scripts/serve.mjs",
+    "build": "node scripts/generate-config.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

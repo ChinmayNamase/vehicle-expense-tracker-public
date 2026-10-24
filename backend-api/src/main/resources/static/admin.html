@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin · Vehicle Expense Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">₹</span>
+      <div>
+        <h1>Vehicle Expense Tracker — Admin</h1>
+        <p class="muted" id="db-status">Connecting…</p>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="/swagger-ui.html" target="_blank" rel="noopener">API docs (Swagger)</a>
+      <a href="/api/stats" target="_blank" rel="noopener">Raw JSON</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="stats" id="stats" aria-label="Database totals"></section>
+
+    <section class="card">
+      <div class="toolbar">
+        <div class="tabs" role="tablist" aria-label="Data">
+          <button role="tab" data-tab="users" aria-selected="true">Users &amp; logins</button>
+          <button role="tab" data-tab="vehicles" aria-selected="false">Vehicles</button>
+          <button role="tab" data-tab="expenses" aria-selected="false">All entries</button>
+          <button role="tab" data-tab="fuel" aria-selected="false">Fuel logs</button>
+          <button role="tab" data-tab="maintenance" aria-selected="false">Services</button>
+          <button role="tab" data-tab="insurance" aria-selected="false">Insurance</button>
+        </div>
+        <div class="filters">
+          <label>User
+            <select id="user-filter"><option value="">All users</option></select>
+          </label>
+          <label>Search
+            <input type="search" id="search" placeholder="Type to filter rows…">
+          </label>
+        </div>
+      </div>
+      <p class="muted small" id="row-count"></p>
+      <div class="table-wrap" id="table-area"><p class="muted">Loading…</p></div>
+    </section>
+    <p class="muted small footnote">Passwords are never shown: Supabase stores them only as one-way hashes, and this API never reads them.</p>
+  </main>
+</body>
+</html>

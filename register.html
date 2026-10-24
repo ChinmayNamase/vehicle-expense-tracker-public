@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign up · Vehicle Expense Tracker</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js" defer></script>
+</head>
+<body class="auth-body">
+  <main class="auth-layout">
+    <a class="brand auth-brand" href="index.html">
+      <img src="assets/logo.svg" alt="" width="36" height="36">
+      <span>Vehicle Expense Tracker</span>
+    </a>
+    <section class="auth-card card" aria-labelledby="auth-title">
+      <h1 id="auth-title">Create your account</h1>
+      <p class="muted">Free, private and secure. Your data is visible only to you.</p>
+      <form id="register-form" novalidate>
+        <div class="form-message"></div>
+        <div class="field">
+          <label for="full_name">Full name</label>
+          <input id="full_name" name="full_name" type="text" autocomplete="name" required aria-describedby="full_name-error" maxlength="80">
+          <p class="field-error" id="full_name-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+          <p class="field-error" id="email-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" required minlength="8" aria-describedby="password-hint password-error">
+          <p class="hint" id="password-hint">At least 8 characters, with a letter and a number.</p>
+          <p class="field-error" id="password-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="confirm_password">Confirm password</label>
+          <input id="confirm_password" name="confirm_password" type="password" autocomplete="new-password" required aria-describedby="confirm_password-error">
+          <p class="field-error" id="confirm_password-error" aria-live="polite"></p>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create account</button>
+      </form>
+      <p class="auth-switch">Already registered? <a href="login.html" class="link">Log in</a></p>
+      <script type="module">
+        import { initRegisterPage } from './js/auth.js';
+        initRegisterPage();
+      </script>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Date,Description,Amount,Petrol Price,Petrol (Litres),Category,Odometer,Difference,Cost Per KM,Full Tank,Notes
+05/01/2026,Bike purchase (on-road),95000,,,Bike/Car Purchase,0,,,,Showroom invoice
+06/01/2026,Petrol HPCL,500,104,,Petrol,185,,,Yes,First fill - baseline reading
+20/01/2026,Petrol IOCL,658,104,6.33,Petrol,348.2,163.2,4.03,Yes,
+03/02/2026,Petrol BPCL,600,104.5,,Petrol,512.6,164.4,3.65,No,
+18/02/2026,Petrol HPCL,700,104.5,6.70,Petrol,690.1,177.5,3.94,Yes,
+25/02/2026,First free service,0,,,Servicing,700,,,,Free service
+02/03/2026,Helmet,1499,,,Accessories,,,,,
+10/03/2026,Insurance renewal,1850,,,Insurance,,,,,1 year third party
+15/03/2026,Petrol IOCL,650,103.9,,Petrol,860.4,170.3,3.82,Yes,
+,Total Expenses,101457,,,,,,,,
+,Monthly Fuel Expenses,1350,,,,,,,,
+,Average KM/L,,,,,,,,,

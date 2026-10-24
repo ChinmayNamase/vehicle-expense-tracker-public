@@ -1,0 +1,4 @@
+# Netlify: generate js/config.js from environment variables, then publish the folder as-is.
+[build]
+  command = "npm run build"
+  publish = "."
